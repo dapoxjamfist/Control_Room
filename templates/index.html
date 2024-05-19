@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karnataka State Police Control Room</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h2>Problem List</h2>
+      <ul id="problemList">
+        <!-- Problems will be dynamically added here -->
+      </ul>
+    </div>  
+    <div class="control-panel">
+      <h1>Karnataka State Police Control Room</h1>
+      <div class="input-options">
+        <div class="media-display">
+          <h2>Selected Video/Image</h2>
+          <div id="mediaContainer"></div>
+          <button id="detectButton">Detect</button>
+          <div id="progressBar" class="hidden">
+            <div class="progress-bar-fill"></div>
+          </div>
+          <h6 style="  font-style: italic;">wait for the analysis process...</h6>
+          <div id="outputVideo" class="hidden">
+            <h3>Output Video</h3>
+            <video id="outputVideoElement" controls></video>
+          </div>
+          <div id="reportContainer">
+            <h2>Report</h2>
+            <div id="reportMessage"></div>
+            <button id="sendReportButton">Send Report</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="right-panel">
+      <h2>Coordinates</h2>
+      <div id="coordinatesDisplay"></div>
+      <button id="fetchButton" onclick="fetchAndPlayVideo()">Fetch</button>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
